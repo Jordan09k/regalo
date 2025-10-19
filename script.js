@@ -8,7 +8,7 @@
         };
 
 // Music Player
-let backgroundMusic = new Audio('ruta/a/tu/cancion.mp3'); // CAMBIA ESTA RUTA
+let backgroundMusic = new Audio('music/Toy Story - Yo Soy Tu Amigo Fiel (By Ricardo Murguía) (Video & Letra) - Sr. Leo Pardo.mp3'); // CAMBIA ESTA RUTA
 backgroundMusic.loop = true;
 backgroundMusic.volume = 0.5;
 let isPlaying = false;
