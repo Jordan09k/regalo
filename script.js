@@ -38,7 +38,7 @@ document.getElementById('volumeSlider').addEventListener('input', function(e) {
         
         let memories = [
     {
-        type: 'image',
+        type: 'image',   
         src: 'music/el roblox.jpg',
         caption: 'De los primeros juegos que jugamos'
     },
