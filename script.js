@@ -137,6 +137,7 @@ document.getElementById('volumeSlider').addEventListener('input', function(e) {
         function toggleSound() {
             soundEnabled = !soundEnabled;
             document.getElementById('soundIcon').textContent = soundEnabled ? '🔊' : '🔇';
+                backgroundMusic.muted = !soundEnabled;
         }
 
         function startQuiz() {
