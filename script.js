@@ -296,19 +296,23 @@ document.getElementById('volumeSlider').addEventListener('input', function(e) {
             }
         }
 
-        function handleImageUpload(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const preview = document.getElementById('imagePreview');
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                    document.querySelector('.upload-text').textContent = 'Foto agregada ✨ (Haz clic para cambiar)';
-                }
-                reader.readAsDataURL(file);
-            }
-        }
+        // Carousel functionality (auto-advance every 3 seconds)
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-image');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+}
+
+// Auto-advance carousel every 3 seconds
+setInterval(nextSlide, 3000);
 
         function showGallery() {
             document.querySelector('.letter-screen').classList.remove('active');
