@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Feliz Cumpleaños Ardy 🎂</title>
+</head>
+<body>
+    <!-- Sound Toggle -->
+    <div class="sound-toggle" onclick="toggleSound()" title="Activar/Desactivar sonido">
+        <span id="soundIcon">🔊</span>
+    </div>
+
+    <!-- Music Player -->
+<div class="music-player">
+    <div class="music-controls">
+        <button class="music-btn" id="playPauseBtn" onclick="toggleMusic()">▶️</button>
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
+        <span class="volume-icon">🎵</span>
+    </div>
+</div>
+
+    <div class="container">
+        <!-- Intro Screen -->
+        <div class="intro-screen active">
+            <h1>🎂 Feliz Cumpleaños Ardy 🎂</h1>
+            <div class="subtitle">
+                <p>Hola Ardy! 💕</p>
+                <p>Antes de revelarte tu sorpresa, demuestra cuánto me conoces respondiendo este quiz...</p>
+                <p>¿Lista para el reto? 🎮</p>
+            </div>
+            <button class="start-btn" onclick="startQuiz()">¡Comenzar! 🚀</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div class="quiz-screen">
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <!-- Question 1 -->
+            <div class="question-container" id="q1">
+                <div class="question">1. ¿Cuál es mi anime favorito?</div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this, 'q1', 'Naruto')">Naruto</div>
+                    <div class="option" onclick="selectOption(this, 'q1', 'One Piece')">One Piece</div>
+                    <div class="option" onclick="selectOption(this, 'q1', 'Demon Slayer')">Demon Slayer</div>
+                    <div class="option" onclick="selectOption(this, 'q1', 'Attack on Titan')">Attack on Titan</div>
+                </div>
+                <button class="next-btn" onclick="nextQuestion(1)" style="display:none;">Siguiente →</button>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-container" id="q2">
+                <div class="question">2. ¿Cuál es mi color favorito?</div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this, 'q2', 'Negro')">Negro</div>
+                    <div class="option" onclick="selectOption(this, 'q2', 'Azul')">Azul</div>
+                    <div class="option" onclick="selectOption(this, 'q2', 'Rojo')">Rojo</div>
+                    <div class="option" onclick="selectOption(this, 'q2', 'Verde')">Verde</div>
+                </div>
+                <button class="next-btn" onclick="nextQuestion(2)" style="display:none;">Siguiente →</button>
+            </div>
+
+            <!-- Question 3 - Hangman -->
+            <div class="question-container" id="q3">
+                <div class="question">3. ¿Cómo se llama mi perro? (Adivina la palabra)</div>
+                <div class="hangman-container">
+                    <div class="word-display" id="wordDisplay"></div>
+                    <div class="keyboard" id="keyboard"></div>
+                    <div class="attempts" id="attempts">Intentos restantes: <span id="attemptsLeft">6</span></div>
+                </div>
+                <button class="next-btn" id="hangmanNext" onclick="nextQuestion(3)" style="display:none;">Siguiente →</button>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-container" id="q4">
+                <div class="question">4. ¿Cuál es mi bebida favorita?</div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this, 'q4', 'Té')">Té</div>
+                    <div class="option" onclick="selectOption(this, 'q4', 'Jugo')">Jugo</div>
+                    <div class="option" onclick="selectOption(this, 'q4', 'Café')">Café</div>
+                    <div class="option" onclick="selectOption(this, 'q4', 'Refresco')">Refresco</div>
+                </div>
+                <button class="next-btn" onclick="nextQuestion(4)" style="display:none;">Siguiente →</button>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-container" id="q5">
+                <div class="question">5. ¿Cuál juego inicio todo?</div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this, 'q5', 'Minecraft')">Minecraft</div>
+                    <div class="option" onclick="selectOption(this, 'q5', 'Roblox')">Roblox</div>
+                    <div class="option" onclick="selectOption(this, 'q5', 'Fortnite')">Fortnite</div>
+                    <div class="option" onclick="selectOption(this, 'q5', 'Among Us')">Among Us</div>
+                </div>
+                <button class="next-btn" onclick="finishQuiz()" style="display:none;">Ver mi sorpresa 🎁</button>
+            </div>
+        </div>
+
+        <!-- Letter Screen -->
+        <div class="letter-screen">
+            <div class="celebration">🎉🎊🎈</div>
+            <h1>¡Feliz Cumpleaños Ardy!</h1>
+            <div class="score-display" id="finalScore"></div>
+            
+            <div class="image-upload" onclick="document.getElementById('imageInput').click()">
+                <div style="font-size: 3em;">📸</div>
+                <div class="upload-text">Haz clic aquí para agregar tu foto especial</div>
+                <input type="file" id="imageInput" accept="image/*" style="display:none;" onchange="handleImageUpload(event)">
+                <img id="imagePreview" class="image-preview" style="display:none;">
+            </div>
+
+            <div class="letter-text">
+                <p><strong>Querida Ardy,</strong></p>
+                <br>
+                <p>Hoy es un día muy especial y quería hacer algo diferente para celebrarte. Ya que este es tu primer cumpleaños con un amigo tan guapo, sexy, filántropo y, sobre todo, MUY humilde, quería hacer algo un poco más trabajado.</p>
+                <br>
+                <p>Desde aquel día en que empezamos a hablar, que de hecho, fue por Roblox, nuestra amistad ha crecido de una manera que nunca imaginé. Has sido esa persona con la que puedo ser yo mismo, reír hasta que duela el estómago, y compartir tanto los buenos como los momentos difíciles.</p>
+                <br>
+                <p>Gracias por ser mi amiga, por estar ahí cuando te necesito (a veces), por entenderme incluso cuando ni yo mismo me entiendo. Eres una persona increíble, Ardy, y me siento muy afortunado de ser tu amigo.</p>
+                <br>
+                <p>Espero que este nuevo año de vida te traiga todo lo que mereces: risas, aventuras, momentos inolvidables y mucha felicidad. Que cada uno de tus sueños se haga realidad y que sepas que siempre contarás conmigo para lo que necesites.</p>
+                <br>
+                <p>¡Feliz cumpleaños! Que este 2 de noviembre sea el inicio de tu mejor año hasta ahora. 🎂✨</p>
+                <br>
+                <p><strong>Con mucho cariño,<br>Jordan 💙</strong></p>
+                <br>
+                <p style="text-align: center; color: #ff69b4; font-style: italic;">P.D: Kaffy también te manda un ladrido de felicitación 🐕❤️</p>
+            </div>
+
+            <button class="next-btn" onclick="showGallery()">Ver Galería de Recuerdos 📸</button>
+        </div>
+
+        <!-- Gallery Screen -->
+        <div class="gallery-screen">
+            <h1>📸 Galería de Recuerdos</h1>
+            <div class="subtitle">
+                <p>Nuestros momentos especiales juntos 💕</p>
+            </div>
+
+            <button class="add-memory-btn" onclick="toggleMemoryForm()">+ Agregar Recuerdo</button>
+
+            <div class="memory-form" id="memoryForm">
+                <div class="file-upload-btn" onclick="document.getElementById('memoryFile').click()">
+                    <div style="font-size: 2em;">📁</div>
+                    <div style="margin-top: 10px;">Haz clic para seleccionar foto o video</div>
+                    <div id="fileNameDisplay" style="margin-top: 10px; color: #ff69b4; font-size: 0.9em;"></div>
+                </div>
+                <input type="file" id="memoryFile" accept="image/*,video/*">
+                <textarea id="memoryCaption" placeholder="Escribe una descripción de este recuerdo..."></textarea>
+                <button class="save-memory-btn" onclick="saveMemory()">Guardar Recuerdo ✨</button>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="empty-gallery">
+                    <div style="font-size: 4em; margin-bottom: 20px;">📷</div>
+                    <p>Aún no hay recuerdos.</p>
+                    <p>¡Agrega el primero!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+<script src="script.js"></script>
+</html>
