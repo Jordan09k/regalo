@@ -37,7 +37,6 @@ document.getElementById('volumeSlider').addEventListener('input', function(e) {
         let soundEnabled = true;
         
         let memories = [
-           let memories = [
     {
         type: 'image',
         src: 'music/el roblox.jpg',
@@ -79,7 +78,6 @@ document.getElementById('volumeSlider').addEventListener('input', function(e) {
         caption: 'Aqui me quedé todo negro'
     }       
 ];
-        ];
 
         // Hangman variables
         const targetWord = 'KAFFY';
