@@ -37,17 +37,48 @@ document.getElementById('volumeSlider').addEventListener('input', function(e) {
         let soundEnabled = true;
         
         let memories = [
-            // Ejemplo de cómo agregar recuerdos:
-            // {
-            //     type: 'image',
-            //     src: 'URL_DE_TU_IMAGEN_AQUI',
-            //     caption: 'Descripción del recuerdo'
-            // },
-            // {
-            //     type: 'video',
-            //     src: 'URL_DE_TU_VIDEO_AQUI',
-            //     caption: 'Descripción del video'
-            // }
+           let memories = [
+    {
+        type: 'image',
+        src: 'music/el roblox.jpg',
+        caption: 'De los primeros juegos que jugamos'
+    },
+    {
+        type: 'video',
+        src: 'music/el roblox video.mp4',
+        caption: 'Ese viaje, terminamos bugueando el juego'
+    },
+    {
+        type: 'image',
+        src: 'music/el roblox x2.jpg',
+        caption: 'Terminamos aqui bugueados JAJAJA'
+    },
+    {
+        type: 'image',
+        src: 'music/alarmas.jpg',
+        caption: 'Recuerdo inolvidable, me hiciste levantarme a las 2 de la mañana'
+    },
+    {
+        type: 'image',
+        src: 'music/alguna actividad.jpg',
+        caption: 'En esta le doxeaste el teléfono como a 2 personas JAJAJA'
+    },
+    {
+        type: 'image',
+        src: 'music/dibujo.jpg',
+        caption: 'Te quedaste calva JAJAJAJA'
+    },
+    {
+        type: 'image',
+        src: 'music/nochat.jpg',
+        caption: 'De los primeros chats, el origen de todo'
+    },
+    {
+        type: 'image',
+        src: 'music/yo modo black.jpg',
+        caption: 'Aqui me quedé todo negro'
+    }       
+];
         ];
 
         // Hangman variables
