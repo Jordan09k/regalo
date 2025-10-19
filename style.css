@@ -16,6 +16,15 @@
             overflow-x: hidden;
         }
 
+        .carousel-container {
+  position: relative;
+  width: 300px;        /* puedes ajustar el tamaño */
+  height: 300px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
         .container {
             background: white;
             border-radius: 30px;
