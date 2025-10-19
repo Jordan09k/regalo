@@ -65,7 +65,7 @@ document.getElementById('volumeSlider').addEventListener('input', function(e) {
     {
         type: 'image',
         src: 'music/dibujo.jpg',
-        caption: 'Te quedaste calva JAJAJAJA'
+        caption: 'Te acuerdas? fue de la primera carta que te hice xd'
     },
     {
         type: 'image',
@@ -76,7 +76,12 @@ document.getElementById('volumeSlider').addEventListener('input', function(e) {
         type: 'image',
         src: 'music/yo modo black.jpg',
         caption: 'Aqui me quedé todo negro'
-    }       
+    },
+    {
+        type: 'image',
+        src: 'music/calvo.jpg',
+        caption: 'Te quedaste bien calva JAJA'
+    }
 ];
 
         // Hangman variables
